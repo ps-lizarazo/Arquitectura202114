@@ -9,8 +9,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def agendar_cita_medica():
-    return jsonify( 
-            servicioTasks.agendarCitaMedica()
+
+    response = {}
+    if worker_name == 'servicio_tres':
+        response = servicioTasks.agendarCitaMedica('fail')
+    else:
+        response = servicioTasks.agendarCitaMedica()
+
+    return jsonify(
+            response
         )
 
 if __name__ == '__main__':

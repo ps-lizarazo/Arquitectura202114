@@ -47,8 +47,5 @@ def solicitarValidacion(time_to_live = 7):
                 return responses[correlation_id]
 
 
-                # TODO: Aca chequear los datos consolidados
-
-
         
 
